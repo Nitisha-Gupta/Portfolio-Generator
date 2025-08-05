@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Portfolio Generator</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact" role="button">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container fade-in">
+        <hgroup>
+            <h2>Create and Customize Your Portfolio</h2>
+            <h3>Choose a template and make it yours!</h3>
+        </hgroup>
+        
+        <!-- Template Selection -->
+        <label for="template">Choose a Template:</label>
+        <select id="template" name="template">
+            <option value="minimalist">Minimalist</option>
+            <option value="professional">Professional</option>
+            <option value="creative">Creative</option>
+        </select>
+
+        <!-- Form for Portfolio Details -->
+        <form id="portfolioForm" class="grid">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+            
+            <label for="bio">Short Bio (About Me):</label>
+            <textarea id="bio" name="bio" placeholder="A passionate web developer..." required></textarea>
+            
+            <label for="education">Education (comma-separated):</label>
+            <textarea id="education" name="education" placeholder="B.Sc. in Computer Science, M.Sc. in AI" required></textarea>
+            
+            <label for="projects">Projects (comma-separated, with descriptions):</label>
+            <textarea id="projects" name="projects" placeholder="Project 1 - A web app, Project 2 - A mobile app" required></textarea>
+            
+            <label for="projectImages">Upload Project Images:</label>
+            <input type="file" id="projectImages" name="projectImages" accept="image/*" multiple>
+            
+            <button type="button" id="generatePreview">Generate Preview</button>
+        </form>
+
+        <!-- Live Preview Section -->
+        <section>
+            <h3>Live Preview</h3>
+            <div class="preview-container">
+                <iframe id="previewFrame"></iframe>
+            </div>
+        </section>
+
+        <!-- Live Code Editor -->
+        <section>
+            <h3>Edit Your Portfolio Code</h3>
+            <div class="editor-container">
+                <textarea id="codeEditor" aria-label="Edit HTML Code"></textarea>
+                <button id="updatePreview">Update Preview</button>
+            </div>
+        </section>
+        
+        <!-- Export Options -->
+        <section>
+            <h3>Export Your Portfolio</h3>
+            <button id="exportCode">Export to Code</button>
+            <button id="shareToGithub">Share to GitHub</button>
+        </section>
+    </main>
+
+    <footer class="container fade-in">
+        <small><a href="#privacy">Privacy Policy</a> • <a href="#terms">Terms of Service</a></small>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
